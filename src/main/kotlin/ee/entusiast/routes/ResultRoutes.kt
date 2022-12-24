@@ -25,7 +25,7 @@ fun Route.resultRouting() {
                 status = HttpStatusCode.BadRequest
             )
             val res =
-                resultStorage.find { it.id == id } ?: return@get call.respondText(
+                resultStorage.find { it.id == id.toInt() } ?: return@get call.respondText(
                     "No res with id $id",
                     status = HttpStatusCode.NotFound
                 )
@@ -41,7 +41,7 @@ fun Route.resultRouting() {
         delete("{id?}") {
             log("delete")
             val id = call.parameters["id"] ?: return@delete call.respond(HttpStatusCode.BadRequest)
-            if (resultStorage.removeIf { it.id == id }) {
+            if (resultStorage.removeIf { it.id == id.toInt() }) {
                 call.respondText("Res removed correctly", status = HttpStatusCode.Accepted)
             } else {
                 call.respondText("Not Found", status = HttpStatusCode.NotFound)
