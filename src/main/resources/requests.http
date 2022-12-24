@@ -4,7 +4,7 @@ POST http://localhost:8080/result
 Content-Type: application/json
 
 {
-  "id": 999,
+  "id": "9999",
   "result": "content"
 }
 
@@ -22,6 +22,6 @@ Accept: application/json
 
 
 ### DELETE request with a header
-DELETE http://localhost:8080/result/999
+DELETE http://localhost:8080/result/9999
 Accept: application/json
 
