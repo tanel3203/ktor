@@ -1,0 +1,27 @@
+
+### Send POST request with json body
+POST http://localhost:8080/result
+Content-Type: application/json
+
+{
+  "id": 999,
+  "result": "content"
+}
+
+
+
+### GET request with a header
+GET http://localhost:8080/result
+Accept: application/json
+
+
+
+### GET request with a header
+GET http://localhost:8080/result/999
+Accept: application/json
+
+
+### DELETE request with a header
+DELETE http://localhost:8080/result/999
+Accept: application/json
+
